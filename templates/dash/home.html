@@ -1,0 +1,188 @@
+{% extends "base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block greeting %}
+  <h3>Welcome {{user.name}}!</h3>
+{% endblock greeting %}
+
+{% block content %}
+  
+  {% if user.is_staff %}
+    <h1>Hey Staff Guy</h1>
+  {% else %}
+    <!-- Template for Normal Guy -->
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="container container-user-info">
+            <div class="row">
+              <h5>Information</h5>
+              <div class="col-4">
+                <h3>Roll No</h3>
+                <h3>Name</h3>
+              </div>
+              <div class="col-8 col-info">
+                <h3>{{user.roll}}</h3>
+                <h3>{{user.name}}</h3>
+              </div>
+            </div>
+
+            <div class="container-amount">
+              <h2>Current Bill</h2>
+              <h1 class="h1-amount">Rs. {{user.students.amount}}</h1>
+            </div>
+          </div>
+
+          <div class="container container-ticket-info">
+            <h3>Latest Bill</h3>
+            <div class="row custom-row-ticket">
+              <div class="col-4">
+                <h3>Amount</h3>
+                <h3>Month</h3>
+              </div>
+              <div class="col-8 col-info">
+                <h3>Rs. 2010</h3>
+                <h3>May 2021</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-8">
+            <div class="container-tickets">
+              <h3>Recent Tickets</h3>
+
+              {% for ticket in tickets %}
+                <a href="{% url 'detail_ticket' ticket.pk %}" class="ticket-a">
+                  <div class="container-ticket-one">
+                    <div class="row">
+                      <div class="col-3">
+                          <h6>{{ticket.date|date:"F d, Y"}}</h6>
+                      </div>
+                      <div class="col-3 container-ticket-amount">
+                          <h5>Amount: Rs {{ticket.amount}}</h5>
+                      </div>
+                      <div class="col-4">
+                        <h6>Ref No: {{ticket.ref_no}}</h6>
+                      </div>
+                      <div class="col  container-ticket-amount">
+                        
+                        {% if ticket.accepted == "PS" %}
+                          <h5>Processing</h5>
+                        {% elif ticket.accepted == "AA" %}
+                          <h5>Accepted</h5>
+                        {% elif ticket.accepted == "RJ" %}
+                        <h5>Rejected</h5>
+                        {% endif %}
+                          
+                          
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              {% endfor %}
+
+              <!-- <a href="#" class="ticket-a">
+                <div class="container-ticket-one">
+                  <div class="row">
+                    <div class="col-3">
+                        <h5>Dec 17, 2021</h5>
+                    </div>
+                    <div class="col-3 container-ticket-amount">
+                        <h5>Amount: Rs 2120</h5>
+                    </div>
+                    <div class="col-4">
+                      <h5>Ref No: HRF125863T</h5>
+                    </div>
+                    <div class="col  container-ticket-amount">
+                      <h5>Rejected</h5>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="ticket-a">
+                <div class="container-ticket-one">
+                  <div class="row">
+                    <div class="col-3">
+                        <h5>Dec 17, 2021</h5>
+                    </div>
+                    <div class="col-3 container-ticket-amount">
+                        <h5>Amount: Rs 2120</h5>
+                    </div>
+                    <div class="col-4">
+                      <h5>Ref No: HRF125863T</h5>
+                    </div>
+                    <div class="col  container-ticket-amount">
+                      <h5>Rejected</h5>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+
+              <a href="#" class="ticket-a">
+                <div class="container-ticket-one">
+                  <div class="row">
+                    <div class="col-3">
+                        <h5>Dec 17, 2021</h5>
+                    </div>
+                    <div class="col-3 container-ticket-amount">
+                        <h5>Amount: Rs 2120</h5>
+                    </div>
+                    <div class="col-4">
+                      <h5>Ref No: HRF125863T</h5>
+                    </div>
+                    <div class="col  container-ticket-amount">
+                      <h5>Rejected</h5>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+
+              <a href="#" class="ticket-a">
+                <div class="container-ticket-one">
+                  <div class="row">
+                    <div class="col-3">
+                        <h5>Dec 17, 2021</h5>
+                    </div>
+                    <div class="col-3 container-ticket-amount">
+                        <h5>Amount: Rs 2120</h5>
+                    </div>
+                    <div class="col-4">
+                      <h5>Ref No: HRF125863T</h5>
+                    </div>
+                    <div class="col  container-ticket-amount">
+                      <h5>Rejected</h5>
+                    </div>
+                  </div>
+                </div>
+              </a> -->
+
+
+
+
+              <div class="row row-custom-button">
+                <div class="col">
+                  <a href="{% url 'list-student-tickets' %}" class="button-custom-ticket">All Tickets</a>
+                </div>
+                <div class="col" >
+                  <a href="{% url 'raise' %}" class="button-custom-ticket">New Ticket</a>
+                </div>
+              </div>
+
+            </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <!-- end amount  -->
+
+
+  {% endif %}
+      
+{% endblock content %}

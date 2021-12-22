@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block greeting %}
+  <h3>Welcome {{user.name}}!</h3>
+{% endblock greeting %}
+
+{% block content %}
+  <div class="container">
+      <div class="row">
+          <div class="col-3">
+
+          </div>
+          <div class="col-6">
+              <form method="POST" class="delete-form">
+                  {% csrf_token %}
+                <h3>Are You Sure You want to Delete This Ticket?</h3>
+                
+                <button class="button-custom-delete" type="submit">Yes, Delete</button>
+                <br>
+                    
+                <a class="back-delete" href="{% url 'detail_ticket' object.id %}">No,Go Back</a>
+                    
+                
+                
+              </form>
+          </div>
+          <div class="col-3">
+
+          </div>
+      </div>
+  </div>
+{% endblock content %}

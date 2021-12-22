@@ -1,0 +1,9 @@
+{% extends "base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container container-logout-custom">
+      <h1>You have been logged out!</h1>
+      <a class="btn btn-primary" href="{% url 'home' %}">Home</a>
+  </div>
+{% endblock content %}

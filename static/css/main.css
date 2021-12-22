@@ -1,0 +1,440 @@
+.navbar-custom {
+    background-color: #80ED99;
+}
+
+body {
+    background-color:snow;
+    
+}
+
+.navbar-logout-div {
+    background-color: #80ED99;
+    border-radius: 0px 0px 0px 100px;
+    padding-left: 20px;
+}
+
+.navbar-logout-div a {
+    padding-left: 60px;
+    outline: none;
+    text-decoration: none;
+    color: snow;
+    padding-right: 50px;
+}
+
+.container-custom {
+    margin: 0px;
+    border-radius: 0px 0px 100px 0px;
+    height: 40px;
+}
+
+.simple-a {
+    color: white;
+    outline: none;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.simple-a:hover {
+    color: white;
+}
+
+.profile-name {
+    color: #80ED99;
+    padding: 10px;
+}
+
+.container-user-info {
+    background-color: #80ED99;
+    margin: 10px;
+    margin-top: 75px;
+    border-radius: 25px;
+    border-color: green;
+    border: 5px;
+    padding: 25px;
+    border-width: thin;
+    color: black;
+}
+
+.container-amount {
+    align-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+.col-info {
+    background-color: snow;
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+.container-amount {
+    margin-top: 20px;
+}
+
+.h1-amount {
+    background-color: snow;
+    border-radius: 20px;
+    /* width: 250px; */
+    /* text-align: center; */
+}
+
+.container-ticket-info {
+    background-color: #80ED99;
+    height: 250px;
+    padding: 25px;
+    margin: 10px;  
+    border-radius: 25px;
+    color:black;
+}
+
+.custom-row-ticket {
+    margin-top: 30px;
+}
+
+.container-tickets {
+    text-align: center;
+    margin: 25px;
+    margin-top: 35px;
+    
+}
+
+.container-ticket-one {
+    background-color: #80ED99;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top:12px;
+    margin: 10px;
+    
+}
+
+.container-ticket-amount {
+    background-color: snow;
+    border-radius: 10px;
+    /* padding-top:5px; */
+    
+}
+.container-ticket-one .row{
+    padding-right: 8px;
+}
+
+.ticket-a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+.ticket-a:hover{
+    background-color: green;
+    color: green;
+}
+
+.button-custom-ticket {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    background-color: #80ED99;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    max-width: 50px;
+    font-size: large;
+}
+
+.button-custom-ticket:hover {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+}
+
+.row-custom-button{
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.button-custom-login {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    background-color: #80ED99;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    margin-left: 150px;
+    font-size: large;
+    margin-top: 50px;
+}
+
+.button-custom-login:hover {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    margin-left: 150px;
+
+    margin-top: 50px;
+}
+
+.container-cover-form {
+    background-color: #80ED99;
+    height: 400px;
+    padding-top:50px;
+    border-radius: 25px;
+    margin-top: 100px;
+}
+
+.container-form-major {
+    border-radius: 25px;
+    /* background-color: snow; */
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.container-cover-form h3 {
+    text-align: center  ;
+}
+
+
+/* Logout CSS */
+
+.container-logout-custom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Register CSS */
+.container-cover-form-register {
+    background-color: #80ED99;
+    height: 650px;
+    
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.container-form-major-register {
+    border-radius: 25px;
+    /* background-color: snow; */
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.container-cover-form-register h3 {
+    text-align: center  ;
+    margin-top: 20px;
+}
+
+.button-custom-login-register {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    background-color: #80ED99;
+    border-radius: 15px;
+    /* margin: 25px; */
+    text-align: center;
+    padding: 15px;
+    margin-left: 150px;
+    font-size: large;
+    margin-top: 10px;
+}
+
+.button-custom-login-register:hover {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    /* margin: 25px; */
+    text-align: center;
+    padding: 15px;
+    margin-left: 150px;
+
+    margin-top: 10px;
+}
+
+.container-form-major-register p{
+    text-align: center;
+}
+.container-form-major-register p a{
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+
+.container-form-major p{
+    text-align: center;
+}
+.container-form-major p a{
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Ticket Detail CSS */
+.container-ticket-detail {
+    background-color: #80ED99;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 50px;
+}
+.container-ticket-detail .title {
+    text-align: center;
+}
+
+.ticket-detail-values {
+    border-radius: 25px;
+    background-color: snow;
+    padding-left: 25px;
+}
+
+.container-below-detail {
+    margin-top: 50px;
+    padding-left: 60px;
+}
+
+.container-below-detail .button-custom-ticket {
+    background-color: lightseagreen;
+}
+
+.button-custom-disabled {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    background-color: grey;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    font-size: large;
+}
+
+.button-custom-disabled:hover {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+}
+
+.container-below-detail-remarks {
+    
+    
+    margin-top: 10px;
+}
+
+.container-below-detail-remarks h6 {
+    border-radius: 25px;
+    background-color: snow;
+    padding-left: 30px;
+    padding: 10px;
+}
+
+
+/* delete view  */
+.button-custom-delete {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    background-color: lightseagreen;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    font-size: large;
+
+    /* margin-top: 50px; */
+    margin-left: 200px;
+}
+
+.button-custom-delete:hover {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    padding: 15px;
+    margin-left: 200px;
+
+}
+
+.back-delete {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-left: 225px;
+}
+
+.delete-form {
+    margin-top: 50px;
+}
+
+/* Common Back Button CSS */
+.back-button-common {
+    outline: none;  
+    text-decoration: none;
+    font-size: 2rem;
+    margin-top: 50px;
+    color: black;
+        padding-left: 30px;
+
+}
+
+.back-button-common:hover {
+    outline: none;  
+    text-decoration: none;
+    font-size: 2rem;
+    margin-top: 50px;
+    color: white;    
+        padding-left: 30px;
+
+}
+
+.container-back {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px; 
+    /* padding-left: 30px; */
+    background-color: #80ED99;
+    border-radius: 25px;
+    color: black;
+    width: 140px;
+    border-radius: 50px;
+}
+.container-back:hover {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px; 
+    /* padding-left: 30px; */
+    background-color:green;
+    border-radius: 25px;
+    color: white;
+}
+
+.text-align-center {
+    text-align: center;
+    margin: 10px;
+}
+
+.custom-scrollbar {
+    overflow-y: scroll;
+    height: 620px;
+}
+
+
+

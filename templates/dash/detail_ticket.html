@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block greeting %}
+  <h3>Welcome {{user.name}}!</h3>
+{% endblock greeting %}
+
+{% block content %}
+  <div class="container">
+      <div class="row">
+          <div class="col-3">
+            <!-- back button  -->
+            <div class="container-back">
+                <a href="{% url 'list-student-tickets' %}" class="back-button-common"> Back </a>
+              </div>
+          </div>
+          <div class="col-6">
+            <div class="container-ticket-detail">
+                <div class="row">
+                    <h3 class="title">Ticket Info</h3>
+                    <div class="col-6">
+                      <h3>Date</h3>
+                      <h3>Amount</h3>
+                      <h3>Ref No</h3>
+                      <h3>Status</h3>
+                      <h3>Remarks</h3>
+                    </div>
+                    <div class="col-6 ticket-detail-values">
+                      <h3>{{object.date|date:"F d, Y"}}</h3>
+                      <h3>Rs. {{object.amount}}</h3>
+                      <h4>{{object.ref_no}}</h4>
+                      <h3>
+                          {% if object.accepted == "PS" %}
+                          <h3>Processing</h3>
+                          {% elif object.accepted == "AA" %}
+                          <h3>Accepted</h3>
+                          {% elif object.accepted == "RJ" %}
+                          <h3>Rejected</h3>
+                          {% endif %}
+                      </h3>
+                      <h5>{{object.remarks}}</h5>
+                    </div>
+
+                </div>
+                
+                {% if object.accepted != "PS" %}
+                    <div class="container-below-detail-remarks">
+                        <h5>Response from Admin</h5>
+                        <h6>{{object.response}}</h6>
+                    </div>
+                {% endif %}
+                
+
+                <div class="row container-below-detail">
+                    <div class="col">
+                        
+                        {% if object.accepted == "PS" %}
+                            <a href="{% url 'update_ticket_student' object.pk %}" class="button-custom-ticket">Update</a>
+                        {% else %}  
+                            <!-- <button class="button-custom-disabled">Update</button> -->
+                        {% endif %}
+                            
+                    </div>
+                    <div class="col">
+                        {% if object.accepted == "PS" %}
+                            <a href="{% url 'delete_ticket_student' object.pk %}" class="button-custom-ticket">Delete</a>
+                        {% else %}
+                            <!-- <button class="button-custom-disabled">Delete</button> -->
+                        {% endif %}
+                    </div>
+                </div>
+
+
+            </div>
+          </div>
+          <div class="col-3">
+              
+          </div>
+        </div>
+
+
+    
+  </div>
+{% endblock content %}
