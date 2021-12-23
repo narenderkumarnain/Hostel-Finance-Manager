@@ -16,6 +16,8 @@ from django.urls import reverse
 
 @login_required
 def homeView(request):
+    if request.user.is_staff:
+        return redirect('staff-home')
     context = {}
     tickets = Ticket.objects.filter(roll = request.user).order_by('date').reverse()[:5]
     context['tickets'] = tickets

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block greeting %}
+  <h3>Welcome Admin!</h3>
+{% endblock greeting %}
+
+{% block content %}
+  <div class="container">
+      <div class="row">
+          <div class="col-3">
+            <div class="container-back">
+              <a href="{% url 'staff-home' %}" class="back-button-common"> Back </a>
+            </div>
+          </div>
+          <div class="col-6">
+
+            <div class="container-bill-form">
+              <h3>Upload Bill</h3>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form|crispy}}
+
+
+                    <input class="form-control custom-file-upload" type = "file" name = "bill" />
+
+                    <button type="submit" class="button-custom-login-register button-bill-upload">Upload</button>
+    
+                </form>
+            </div>
+            
+          </div>
+          <div class="col-3">
+
+          </div>
+      </div>
+  </div>
+{% endblock content %}

@@ -437,4 +437,66 @@ body {
 }
 
 
+/* Staff CSS  */
+.container-user-info-staff {
+    background-color: #80ED99;
+    margin: 10px;
+    margin-top: 50px;
+    border-radius: 25px;
+    border-color: green;
+    border: 5px;
+    padding: 25px;
+    border-width: thin;
+    color: black;
+}
+
+.container-amount-staff {
+    align-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container-ticket-info-staff {
+    background-color: #80ED99;
+    height: 250px;
+    padding: 25px;
+    margin: 10px;  
+    border-radius: 25px;
+    color:black;
+}
+
+.custom-row-ticket-staff {
+    margin-top: 30px;
+}
+
+.col-info-staff {
+    background-color: snow;
+    border-radius: 20px;
+    padding-left: 20px; 
+}
+
+.container-bill-form {
+    background-color: #80ED99;
+    border-radius: 25px;
+    padding: 25px;
+    margin-top: 50px;
+    
+}
+
+.container-bill-form h3 {
+    text-align: center;
+}
+
+.button-bill-upload {
+    margin-left: 250px;
+}
+
+.button-bill-upload:hover {
+    margin-left: 250px;
+}
+
+.custom-file-upload {
+    margin-top: 25px    ;
+}
+
 

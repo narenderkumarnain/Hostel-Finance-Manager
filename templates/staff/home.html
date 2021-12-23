@@ -1,0 +1,120 @@
+{% extends "base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block greeting %}
+  <h3>Welcome Admin!</h3>
+{% endblock greeting %}
+
+{% block content %}
+    <!-- Template for Normal Guy -->
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="container container-user-info-staff">
+            <div class="row">
+              <h5>Information</h5>
+              <div class="col-6">
+                <h3>Students</h3>
+                
+              </div>
+              <div class="col-6 col-info-staff">
+                <h3>{{no_students}}</h3>
+                
+              </div>
+            </div>
+
+            <div class="container-amount-staff">
+              <h2>Bill Details</h2>
+              <div class="row">
+                <div class="col">
+                  <h3>Remaining</h3>
+                  <h3>Extra</h3>
+
+                </div>
+                <div class="col col-info-staff">
+                  <h3>Rs. {{remaining_total}}</h3>
+                  <h3>Rs. {{extra}}</h3>
+                  
+                </div>
+              </div>
+              <h3>Net</h3>
+              <h1 class="h1-amount">Rs. {{ net }}</h1>
+            </div>
+          </div>
+
+          <div class="container container-ticket-info">
+            <h3>Ticket Stats</h3>
+            <div class="row custom-row-ticket">
+              <div class="col-6">
+                <h3>Pending</h3>
+                
+              </div>
+              <div class="col-6 col-info-staff">
+                <h3>{{pending_tickets}}</h3>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-8">
+            <div class="container-tickets">
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+              <h3>Recent Tickets</h3>
+
+              {% for ticket in tickets %}
+                <a href="{% url 'detail_ticket' ticket.pk %}" class="ticket-a">
+                  <div class="container-ticket-one">
+                    <div class="row">
+                      <div class="col-3">
+                          <h6>{{ticket.date|date:"F d, Y"}}</h6>
+                      </div>
+                      <div class="col-3 container-ticket-amount">
+                          <h5>Amount: Rs {{ticket.amount}}</h5>
+                      </div>
+                      <div class="col-4">
+                        <h6>Ref No: {{ticket.ref_no}}</h6>
+                      </div>
+                      <div class="col  container-ticket-amount">
+                        
+                        {% if ticket.accepted == "PS" %}
+                          <h5>Processing</h5>
+                        {% elif ticket.accepted == "AA" %}
+                          <h5>Accepted</h5>
+                        {% elif ticket.accepted == "RJ" %}
+                        <h5>Rejected</h5>
+                        {% endif %}
+                          
+                          
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              {% endfor %}
+
+
+              <div class="row row-custom-button">
+                <div class="col">
+                  <a href="{% url 'bill-upload' %}" class="button-custom-ticket">Upload Bill</a>
+                </div>
+                <div class="col" >
+                  <a href="{% url 'resolve-tickets' %}" class="button-custom-ticket">Resolve Tickets</a>
+                </div>
+              </div>
+
+            </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <!-- end amount  -->
+{% endblock content %}

@@ -17,6 +17,8 @@ class Students(models.Model):
     amount = models.IntegerField(default = 0)    
 
     # to be added in future for addtional features 
+    latest_bill = models.CharField(max_length=20,default="")
+    latest_amount = models.IntegerField(default=0)
 
 class Ticket(models.Model):
     """

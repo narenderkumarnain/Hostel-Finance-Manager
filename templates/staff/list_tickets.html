@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block greeting %}
+  <h3>Welcome Admin!</h3>
+{% endblock greeting %}
+
+{% block content %}
+  <div class="container-tickets-all">
+      <div class="row">
+          <div class="col-2">
+
+            <!-- back button  -->
+            <div class="container-back">
+              <a href="{% url 'staff-home' %}" class="back-button-common"> Back </a>
+            </div>
+
+          </div>
+          <div class="col-8">
+            <h3 class="text-align-center">Tickets</h3>
+            <div class="overflow-auto custom-scrollbar">
+              
+                {% for ticket in tickets  %}
+                <a href="{% url 'detail_ticket' ticket.pk %}" class="ticket-a">
+                    <div class="container-ticket-one">
+                      <div class="row">
+                        <div class="col-3">
+                            <h6>{{ticket.date|date:"F d, Y"}}</h6>
+                        </div>
+                        <div class="col-3 container-ticket-amount">
+                            <h5>Amount: Rs {{ticket.amount}}</h5>
+                        </div>
+                        <div class="col-4">
+                          <h6>Ref No: {{ticket.ref_no}}</h6>
+                        </div>
+                        <div class="col  container-ticket-amount">
+                          
+                            {% if ticket.accepted == "PS" %}
+                            <h5>Processing</h5>
+                            {% elif ticket.accepted == "AA" %}
+                            <h5>Accepted</h5>
+                            {% elif ticket.accepted == "RJ" %}
+                            <h5>Rejected</h5>
+                            {% endif %}
+                            
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                {% endfor %}
+            </div>
+          </div>
+          <div class="col-2">
+
+          </div>
+      </div>
+  </div>
+{% endblock content %}
