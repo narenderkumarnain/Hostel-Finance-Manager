@@ -122,12 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # Adding the Global Static Directory
+STATICFILES_DIRS = [
+   BASE_DIR / 'static'
+]
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-
-# STATICFILES_DIRS = [
-#    BASE_DIR / 'static'
-# ]
 
 STATIC_URL = '/static/'
 
