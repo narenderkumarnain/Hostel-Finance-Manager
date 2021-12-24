@@ -13,13 +13,15 @@
               <a href="{% url 'staff-home' %}" class="back-button-common"> Back </a>
             </div>
 
+            
+
           </div>
           <div class="col-8">
             <h3 class="text-align-center">Tickets</h3>
             <div class="overflow-auto custom-scrollbar">
               
                 {% for ticket in tickets  %}
-                <a href="{% url 'detail_ticket' ticket.pk %}" class="ticket-a">
+                <a href="{% url 'staff-ticket-detail' ticket.pk %}" class="ticket-a">
                     <div class="container-ticket-one">
                       <div class="row">
                         <div class="col-3">
@@ -29,7 +31,7 @@
                             <h5>Amount: Rs {{ticket.amount}}</h5>
                         </div>
                         <div class="col-4">
-                          <h6>Ref No: {{ticket.ref_no}}</h6>
+                          <h6>  Roll No: {{ticket.roll.roll}}</h6>
                         </div>
                         <div class="col  container-ticket-amount">
                           

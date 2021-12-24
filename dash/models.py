@@ -43,6 +43,8 @@ class Ticket(models.Model):
 
     response = models.TextField(max_length=200, default="")
 
+    acceptance_date = models.DateTimeField(null=True)
+
     def __str__(self):
         return self.roll.roll + ' ' + str(self.date)
 
